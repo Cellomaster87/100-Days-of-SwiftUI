@@ -15,6 +15,7 @@
 		FD18F19D2363855C009C79C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD18F19B2363855C009C79C5 /* LaunchScreen.storyboard */; };
 		FD18F1A62363872E009C79C5 /* Stepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD18F1A52363872E009C79C5 /* Stepper.swift */; };
 		FDDB973023638B8F005735F7 /* DatePickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB972F23638B8F005735F7 /* DatePickers.swift */; };
+		FDDB97752363AFEB005735F7 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FDDB97742363AFEB005735F7 /* SleepCalculator.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FD18F19E2363855C009C79C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD18F1A52363872E009C79C5 /* Stepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stepper.swift; sourceTree = "<group>"; };
 		FDDB972F23638B8F005735F7 /* DatePickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickers.swift; sourceTree = "<group>"; };
+		FDDB97742363AFEB005735F7 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				FD18F1962363855C009C79C5 /* Assets.xcassets */,
 				FD18F19B2363855C009C79C5 /* LaunchScreen.storyboard */,
 				FD18F19E2363855C009C79C5 /* Info.plist */,
+				FDDB97742363AFEB005735F7 /* SleepCalculator.mlmodel */,
 				FD18F1982363855C009C79C5 /* Preview Content */,
 			);
 			path = BetterRest;
@@ -164,6 +167,7 @@
 				FD18F1932363855B009C79C5 /* SceneDelegate.swift in Sources */,
 				FD18F1952363855B009C79C5 /* ContentView.swift in Sources */,
 				FDDB973023638B8F005735F7 /* DatePickers.swift in Sources */,
+				FDDB97752363AFEB005735F7 /* SleepCalculator.mlmodel in Sources */,
 				FD18F1A62363872E009C79C5 /* Stepper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
