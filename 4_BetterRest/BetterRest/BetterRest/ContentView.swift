@@ -13,16 +13,16 @@ struct ContentView: View {
     @State private var sleepAmount = 8.0
     @State private var coffeeAmount = 1
     
-    @State private var alertTitle = ""
-    @State private var alertMessage = ""
-    @State private var showingAlert = false
-    
     static var defaultWakeTime: Date {
         var components = DateComponents()
         components.hour = 7
         components.minute = 0
         
         return Calendar.current.date(from: components) ?? Date()
+    }
+    
+    var recommendedBedtime: String {
+        calculateBedTime()
     }
     
     var body: some View {
@@ -54,20 +54,20 @@ struct ContentView: View {
                         .labelsHidden()
                         .pickerStyle(WheelPickerStyle())
                 }
-            }
-            .alert(isPresented: $showingAlert) {
-                Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                
+                /// Challenge 3: show recommended bedtime using a nice and large font. Remove the "Calculate" button as well.
+                Section(header: Text("Recommended bedtime").font(.headline)) {
+                    Text(recommendedBedtime)
+                        .font(.largeTitle)
+                }
             }
             .navigationBarTitle("BetterRest")
-            .navigationBarItems(trailing: Button(action: calculateBedTime) {
-                    Text("Calculate")
-                })
         }
     }
 }
 
 extension ContentView {
-    func calculateBedTime() {
+    func calculateBedTime() -> String {
         let model = SleepCalculator()
         
         let components = Calendar.current.dateComponents([.hour, .minute], from: wakeUp)
@@ -80,15 +80,11 @@ extension ContentView {
             
             let formatter = DateFormatter()
             formatter.timeStyle = .short
-            
-            alertMessage = formatter.string(from: sleepTime)
-            alertTitle = "Your ideal bedtime is..."
+ 
+            return formatter.string(from: sleepTime)
         } catch {
-            alertTitle = "Error"
-            alertMessage = "Sorry, there was a problem calculating your bedtime."
+            return "Sorry, there was a problem calculating your bedtime."
         }
-        
-        showingAlert = true
     }
 }
 
