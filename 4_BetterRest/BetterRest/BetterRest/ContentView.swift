@@ -28,6 +28,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
+                /// Challenge 1: changed `VStack` with `Section`
                 Section(header: Text("When do you want to wake up?")
                     .font(.headline)) {
                         DatePicker("Please enter a time", selection: $wakeUp, displayedComponents: .hourAndMinute)
@@ -44,13 +45,14 @@ struct ContentView: View {
                 
                 Section(header: Text("Daily coffee intake")
                     .font(.headline)) {
-                    Stepper(value: $coffeeAmount, in: 1...20) {
-                        if coffeeAmount == 1 {
-                            Text("1 cup")
-                        } else {
-                            Text("\(coffeeAmount) cups")
-                        }
-                    }
+                        /// Challenge 2: changed `Stepper` with `Picker`
+                        Picker("Coffee intake", selection: $coffeeAmount) {
+                            ForEach(1...20, id: \.self) { i in
+                                Text("\(i) \(i == 1 ? "cup" : "cups")")
+                            }
+                        }.id("coffee")
+                        .labelsHidden()
+                        .pickerStyle(WheelPickerStyle())
                 }
             }
             .alert(isPresented: $showingAlert) {
