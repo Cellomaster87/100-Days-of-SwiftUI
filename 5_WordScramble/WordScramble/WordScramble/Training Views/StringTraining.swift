@@ -22,9 +22,15 @@ struct StringTraining: View {
         let word = "swift"
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
-        let misspelledRange = checker
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
+        let allGood = misspelledRange.location == NSNotFound
         
-        return Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        return Text("""
+                    Word: \(word)
+                    Range: \(range.description)
+                    MisspelledRange: \(misspelledRange.description)
+                    All good: \(allGood.description)
+                    """)
     }
 }
 
