@@ -17,6 +17,23 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    var score: Int {
+        guard !usedWords.isEmpty else { return 0 }
+        
+        var tempScore = 1.0
+        
+        for word in usedWords {
+            for _ in word {
+                tempScore *= 1.5
+            }
+        }
+        
+        tempScore *= Double(usedWords.count * 2)
+        
+        return Int(tempScore)
+    }
+     
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -28,6 +45,10 @@ struct ContentView: View {
                 List(usedWords, id: \.self) {
                     Image(systemName: "\($0.count).circle")
                     Text($0)
+                }
+                
+                Section(header: Text("Score").bold()) {
+                    Text("Your score for \(rootWord) is \(score)")
                 }
             }
             .navigationBarTitle(rootWord)
@@ -51,6 +72,7 @@ extension ContentView {
                 let allWords = startWords.components(separatedBy: "\n")
                 
                 rootWord = allWords.randomElement() ?? "silkworm"
+                usedWords = []
                 
                 return
             }
@@ -90,8 +112,6 @@ extension ContentView {
             wordError(title: "Word not possible", message: "This isn't a real word.")
             return
         }
-        
-        
         
         usedWords.insert(answer, at: 0)
         newWord = ""
