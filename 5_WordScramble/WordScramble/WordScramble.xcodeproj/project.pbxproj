@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D461E722369745700C08488 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D461E712369745700C08488 /* start.txt */; };
 		2D883AA023674AEA00C73630 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D883A9F23674AEA00C73630 /* AppDelegate.swift */; };
 		2D883AA223674AEA00C73630 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D883AA123674AEA00C73630 /* SceneDelegate.swift */; };
 		2D883AA423674AEA00C73630 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D883AA323674AEA00C73630 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D461E712369745700C08488 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		2D883A9C23674AEA00C73630 /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D883A9F23674AEA00C73630 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D883AA123674AEA00C73630 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				2D883AA523674AEB00C73630 /* Assets.xcassets */,
 				2D883AAA23674AEB00C73630 /* LaunchScreen.storyboard */,
 				2D883AAD23674AEB00C73630 /* Info.plist */,
+				2D461E712369745700C08488 /* start.txt */,
 				2D883AA723674AEB00C73630 /* Preview Content */,
 			);
 			path = WordScramble;
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D883AAC23674AEB00C73630 /* LaunchScreen.storyboard in Resources */,
+				2D461E722369745700C08488 /* start.txt in Resources */,
 				2D883AA923674AEB00C73630 /* Preview Assets.xcassets in Resources */,
 				2D883AA623674AEB00C73630 /* Assets.xcassets in Resources */,
 			);
