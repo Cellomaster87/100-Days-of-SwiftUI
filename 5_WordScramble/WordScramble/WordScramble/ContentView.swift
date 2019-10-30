@@ -42,21 +42,15 @@ struct ContentView: View {
 // MARK: - Loading methods
 extension ContentView {
     func startGame() {
-        // 1. Find the URL for start.txt in our app bundle
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
-            // 2. Load start.txt into a string
             if let startWords = try? String(contentsOf: startWordsURL) {
-                // 3. Split the string up into an array of strings, splitting on line breaks
                 let allWords = startWords.components(separatedBy: "\n")
                 
-                // 4. Pick one random word, or use "silkworm" as a sensible default
                 rootWord = allWords.randomElement() ?? "silkworm"
                 
-                // If we are here everything has worked, so we can exit
                 return
             }
         }
-        // If we are *here* then there was a problem — trigger a crash and report the error
         fatalError("Could not load start.txt from bundle.")
     }
 }
@@ -64,11 +58,19 @@ extension ContentView {
 // MARK: -  Gameplay methods
 extension ContentView {
     func addNewWord() {
-        // lowercase and trim the word, to make sure we don't add duplicate words with case differences.
         let answer = newWord.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         
-        // exit if the remaining string is empty
         guard answer.count > 0 else { return }
+        
+        guard !isTooShort(word: answer) else {
+            wordError(title: "Word too short", message: "Please use at least 3 letters")
+            return
+        }
+        
+        guard answer != rootWord else {
+            wordError(title: "Good try!", message: "...but you cannot use the same word!")
+            return
+        }
         
         guard isOriginal(word: answer) else {
             wordError(title: "Word used already", message: "Be more original")
@@ -84,6 +86,8 @@ extension ContentView {
             wordError(title: "Word not possible", message: "This isn't a real word.")
             return
         }
+        
+        
         
         usedWords.insert(answer, at: 0)
         newWord = ""
@@ -113,6 +117,10 @@ extension ContentView {
         let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
         
         return misspelledRange.location == NSNotFound
+    }
+    
+    func isTooShort(word: String) -> Bool {
+        word.count < 3
     }
 }
 
