@@ -31,9 +31,13 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle(rootWord)
+            .navigationBarItems(leading: Button(action: startGame) {
+                Text("New game")
+            })
             .onAppear(perform: startGame)
             .alert(isPresented: $showingError) { () -> Alert in
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+            
             }
         }
     }
