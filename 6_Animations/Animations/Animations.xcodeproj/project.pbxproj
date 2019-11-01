@@ -16,6 +16,11 @@
 		2D8A56C3236AFE76009F8110 /* ImplicitAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8A56C2236AFE76009F8110 /* ImplicitAnimations.swift */; };
 		2D8A56C5236B52B9009F8110 /* AnimatingBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8A56C4236B52B9009F8110 /* AnimatingBinding.swift */; };
 		2D8A56C7236B5BE5009F8110 /* ExplicitAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8A56C6236B5BE5009F8110 /* ExplicitAnimations.swift */; };
+		2DD0932B236CC76D00B7AA3A /* ControlAnimationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0932A236CC76D00B7AA3A /* ControlAnimationStack.swift */; };
+		2DD0932D236CCC9500B7AA3A /* AnimatingGestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0932C236CCC9500B7AA3A /* AnimatingGestures.swift */; };
+		2DD0932F236CD38100B7AA3A /* HelloSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD0932E236CD38100B7AA3A /* HelloSwiftUI.swift */; };
+		2DD09331236CD60500B7AA3A /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD09330236CD60500B7AA3A /* Transitions.swift */; };
+		2DD09333236CD8AE00B7AA3A /* CornerRotateModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD09332236CD8AE00B7AA3A /* CornerRotateModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		2D8A56C2236AFE76009F8110 /* ImplicitAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImplicitAnimations.swift; sourceTree = "<group>"; };
 		2D8A56C4236B52B9009F8110 /* AnimatingBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingBinding.swift; sourceTree = "<group>"; };
 		2D8A56C6236B5BE5009F8110 /* ExplicitAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplicitAnimations.swift; sourceTree = "<group>"; };
+		2DD0932A236CC76D00B7AA3A /* ControlAnimationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlAnimationStack.swift; sourceTree = "<group>"; };
+		2DD0932C236CCC9500B7AA3A /* AnimatingGestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingGestures.swift; sourceTree = "<group>"; };
+		2DD0932E236CD38100B7AA3A /* HelloSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUI.swift; sourceTree = "<group>"; };
+		2DD09330236CD60500B7AA3A /* Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
+		2DD09332236CD8AE00B7AA3A /* CornerRotateModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRotateModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +98,11 @@
 				2D8A56C2236AFE76009F8110 /* ImplicitAnimations.swift */,
 				2D8A56C4236B52B9009F8110 /* AnimatingBinding.swift */,
 				2D8A56C6236B5BE5009F8110 /* ExplicitAnimations.swift */,
+				2DD0932A236CC76D00B7AA3A /* ControlAnimationStack.swift */,
+				2DD0932C236CCC9500B7AA3A /* AnimatingGestures.swift */,
+				2DD0932E236CD38100B7AA3A /* HelloSwiftUI.swift */,
+				2DD09330236CD60500B7AA3A /* Transitions.swift */,
+				2DD09332236CD8AE00B7AA3A /* CornerRotateModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,10 +178,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD0932F236CD38100B7AA3A /* HelloSwiftUI.swift in Sources */,
 				2D8A56AE236AFCC8009F8110 /* AppDelegate.swift in Sources */,
+				2DD0932B236CC76D00B7AA3A /* ControlAnimationStack.swift in Sources */,
 				2D8A56C3236AFE76009F8110 /* ImplicitAnimations.swift in Sources */,
 				2D8A56B0236AFCC8009F8110 /* SceneDelegate.swift in Sources */,
+				2DD0932D236CCC9500B7AA3A /* AnimatingGestures.swift in Sources */,
+				2DD09331236CD60500B7AA3A /* Transitions.swift in Sources */,
 				2D8A56B2236AFCC8009F8110 /* ContentView.swift in Sources */,
+				2DD09333236CD8AE00B7AA3A /* CornerRotateModifier.swift in Sources */,
 				2D8A56C7236B5BE5009F8110 /* ExplicitAnimations.swift in Sources */,
 				2D8A56C5236B52B9009F8110 /* AnimatingBinding.swift in Sources */,
 			);
