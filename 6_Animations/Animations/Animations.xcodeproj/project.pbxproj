@@ -14,6 +14,8 @@
 		2D8A56B7236AFCC9009F8110 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D8A56B6236AFCC9009F8110 /* Preview Assets.xcassets */; };
 		2D8A56BA236AFCC9009F8110 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D8A56B8236AFCC9009F8110 /* LaunchScreen.storyboard */; };
 		2D8A56C3236AFE76009F8110 /* ImplicitAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8A56C2236AFE76009F8110 /* ImplicitAnimations.swift */; };
+		2D8A56C5236B52B9009F8110 /* AnimatingBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8A56C4236B52B9009F8110 /* AnimatingBinding.swift */; };
+		2D8A56C7236B5BE5009F8110 /* ExplicitAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8A56C6236B5BE5009F8110 /* ExplicitAnimations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		2D8A56B9236AFCC9009F8110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D8A56BB236AFCC9009F8110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D8A56C2236AFE76009F8110 /* ImplicitAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImplicitAnimations.swift; sourceTree = "<group>"; };
+		2D8A56C4236B52B9009F8110 /* AnimatingBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingBinding.swift; sourceTree = "<group>"; };
+		2D8A56C6236B5BE5009F8110 /* ExplicitAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplicitAnimations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				2D8A56C2236AFE76009F8110 /* ImplicitAnimations.swift */,
+				2D8A56C4236B52B9009F8110 /* AnimatingBinding.swift */,
+				2D8A56C6236B5BE5009F8110 /* ExplicitAnimations.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 				2D8A56C3236AFE76009F8110 /* ImplicitAnimations.swift in Sources */,
 				2D8A56B0236AFCC8009F8110 /* SceneDelegate.swift in Sources */,
 				2D8A56B2236AFCC8009F8110 /* ContentView.swift in Sources */,
+				2D8A56C7236B5BE5009F8110 /* ExplicitAnimations.swift in Sources */,
+				2D8A56C5236B52B9009F8110 /* AnimatingBinding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
