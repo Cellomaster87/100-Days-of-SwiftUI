@@ -15,6 +15,10 @@ struct ContentView: View {
     @State private var scoreTitle = ""
     @State private var score = 0
     
+    @State private var rotationAmount = 0.0
+    @State private var dimWrongFlags = false
+    @State var attempts: Int = 0 // copied
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
@@ -23,27 +27,27 @@ struct ContentView: View {
                 VStack {
                     Text("Tap the flag of")
                         .foregroundColor(.white)
-                    Text(countries[correctAnswer])
-                        .foregroundColor(.white)
-                        .font(.largeTitle)
-                        .fontWeight(.black)
+                    HStack {
+                        Spacer()
+                        
+                        Text(countries[correctAnswer])
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
+                            .fontWeight(.black)
+                        
+                        Spacer()
+                    }
                 }
                 
                 ForEach(0 ..< 3) { number in
                     Button(action: {
                         self.flagTapped(number)
                     }) {
-                        /// Four built-in shapes in Swift: rectangle, rounded rectangle, circle, capsule
-                        /// To draw a border around an image, use the `overlay()` modifier
-                        
-                        /// Commented out for Project 3 challenge 3
-//                        Image(self.countries[number])
-//                            .renderingMode(.original)
-//                            .clipShape(Capsule())
-//                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-//                            .shadow(color: .black, radius: 2)
                         FlagImage(name: self.countries[number])
                     }
+                    .rotation3DEffect(.degrees(number == self.correctAnswer ? self.rotationAmount : 0), axis: (x: 0, y: 1, z: 0))
+                    .opacity(self.dimWrongFlags && number != self.correctAnswer ? 0.25 : 1.0)
+                    .modifier(Shake(animatableData: CGFloat(self.attempts)))
                 }
                 
                 Text("Score: \(score)")
@@ -57,25 +61,54 @@ struct ContentView: View {
         }.alert(isPresented: $showingScore) {
             Alert(title: Text(scoreTitle), message: Text("Your score is \(score)!"), dismissButton: .default(Text("Continue")) {
                 self.askQuestion()
-            })
-        }
+                })
+            }
     }
     
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
             scoreTitle = "Correct!"
             score += 1
+            
+            withAnimation(.spring()) {
+                self.rotationAmount += 360.0
+            }
         } else {
             scoreTitle = "Wrong!\nThat's the flag of \(countries[number])!"
             score -= 1
+            
+            withAnimation(.default) {
+                attempts += 1 // copied
+            }
         }
         
-        showingScore = true
+        dimWrongFlags = true
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.showingScore = true
+        }
     }
     
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        
+        showingScore = false
+        dimWrongFlags = false
+        attempts = 0 // copied
+    }
+}
+
+// copied
+struct Shake: GeometryEffect {
+    var amount: CGFloat = 10
+    var shakesPerUnit = 3
+    var animatableData: CGFloat
+
+    func effectValue(size: CGSize) -> ProjectionTransform {
+        ProjectionTransform(CGAffineTransform(translationX:
+            amount * sin(animatableData * .pi * CGFloat(shakesPerUnit)),
+            y: 0))
     }
 }
 
